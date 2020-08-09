@@ -1,0 +1,15 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "In my mind",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vuepress dev blog",
+    "build": "vuepress build blog"
+  },
+  "author": "Ruslan Abkadirov",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
