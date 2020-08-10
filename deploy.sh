@@ -9,14 +9,12 @@ npm run build
 # navigate into the build output directory
 cd blog/.vuepress/dist
 
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
-
 git init
+git config user.email "rusabk@yandex.ru"
+git config user.name "Ruslan Abkadirov"
 git add -A
 git commit -m 'deploy'
 
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:ruslanabk/blog.git master:gh-pages
+git push -f https://github.com/Ruslanabk/blog.git master:gh-pages
 
 cd -
