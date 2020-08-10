@@ -6,5 +6,5 @@ module.exports = {
             { text: 'Блог', link: '/posts/'}
         ]
     },
-    base: "/"
+    base: "/blog/"
 }
