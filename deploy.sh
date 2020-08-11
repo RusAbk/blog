@@ -15,6 +15,6 @@ git config user.name "Ruslan Abkadirov"
 git add -A
 git commit -m 'deploy'
 
-git push -f https://github.com/Ruslanabk/blog.git master:gh-pages
+git push -f https://github.com/Ruslanabk/ruslanabk.github.io.git master
 
 cd -

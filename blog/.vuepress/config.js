@@ -1,5 +1,5 @@
 module.exports = {
-    base: "/blog/",
+    base: "/",
     title: 'Ruslan Abkadirov',
     themeConfig: {
         logo: '/logo.jpg',
