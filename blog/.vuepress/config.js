@@ -2,7 +2,7 @@ module.exports = {
     base: "/",
     title: 'Ruslan Abkadirov',
     themeConfig: {
-        logo: '/logo.jpg',
+        logo: '/logo.png',
         nav: [
             { text: 'Главная', link: '/' },
             { text: 'Блог', link: '/posts/' }
