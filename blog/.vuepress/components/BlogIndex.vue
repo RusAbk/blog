@@ -4,7 +4,7 @@
       <h3 class="preview-title"><router-link :to="post.path">{{ post.frontmatter.title }}</router-link></h3>
       <p>{{ post.frontmatter.description }}</p>
       <p>
-        <Btn :href="post.path">Читать далее 📖</Btn>
+        <Btn :href="post.path">Читать далее {{post.frontmatter.emoji}}</Btn>
       </p>
     </div>
   </div>
