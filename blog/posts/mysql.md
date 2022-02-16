@@ -176,3 +176,5 @@ exit
 
 ## Комментарии
 <Comments />
+
+<YMetrika />

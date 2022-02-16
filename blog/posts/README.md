@@ -4,3 +4,5 @@ blog_index: true
 ---
 
 <BlogIndex />
+
+<YMetrika />
