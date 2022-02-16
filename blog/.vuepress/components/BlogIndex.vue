@@ -2,12 +2,13 @@
   <div>
     <h1>Последние публикации</h1>
     <div>
-      <div>
+        <h2>Облако тегов</h2>
+        <p>Выберите один или несколько тегов, чтобы отфильтровать статьи и читать только то, что Вам интересно.</p>
         <label class="tag" :class="selectedTags.indexOf(tag) != -1 ? 'selected':''" v-for="tag in tags">
           <input type="checkbox" v-model="selectedTags" :value="tag"> {{tag}}
         </label>
-      </div>
     </div>
+    <h2>Список статей</h2>
     <div v-for="post in posts" class="preview-container">
       <h3 class="preview-title"><router-link :to="post.path">{{ post.frontmatter.title }}</router-link></h3>
       <small class="preview-info">👤 {{ post.frontmatter.author }} | 🗓 {{formatDate(post.frontmatter.date)}}</small>
