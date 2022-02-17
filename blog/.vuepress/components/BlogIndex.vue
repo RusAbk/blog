@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Последние публикации</h1>
+    <h1>Блог Руслана Абкадирова</h1>
     <div>
         <h2>Облако тегов</h2>
         <p>Выберите один или несколько тегов, чтобы отфильтровать статьи и читать только то, что Вам интересно.</p>
@@ -8,7 +8,7 @@
           <input type="checkbox" v-model="selectedTags" :value="tag"> {{tag}}
         </label>
     </div>
-    <h2>Список статей</h2>
+    <h2>Последние публикации</h2>
     <div v-for="post in posts" class="preview-container">
       <h3 class="preview-title"><router-link :to="post.path">{{ post.frontmatter.title }}</router-link></h3>
       <small class="preview-info">👤 {{ post.frontmatter.author }} | 🗓 {{formatDate(post.frontmatter.date)}}</small>
