@@ -1,15 +1,12 @@
 ---
-title: Personal Blog
-description: A minimal Quartz blog built from Markdown files.
+title: Notes
+description: Short notes by Ruslan Abkadirov.
 ---
 
-This is a small place for notes, essays, and the occasional working thought.
+Short notes on process design, practical AI implementation, education products, and the operational details that make work easier to repeat.
 
-The blog is intentionally plain. Markdown files live in `content/`, Quartz turns them into a static site, and the writing should do most of the work.
+I work on business process optimization and AI workflows for teams that need less manual coordination and more reliable execution.
 
 ## Start here
 
-- [[posts/hello|First note]]
-- [[posts/on-writing-in-public|On writing in public]]
-- [[writing-style|Writing style]]
 - [[about|About]]

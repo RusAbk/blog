@@ -1,19 +1,13 @@
 ---
 title: About
-description: A short note about this blog.
+description: A short note about Ruslan Abkadirov.
 published: 2026-05-16
 tags:
   - meta
 ---
 
-This is a minimal personal blog built with Quartz.
+I am Ruslan Abkadirov. I work on process optimization and practical AI implementation.
 
-The idea is simple: write in Markdown, keep the structure light, and let related notes connect through `[[wikilinks]]`.
+Most of my work sits between operations and software: mapping messy workflows, removing manual bottlenecks, building AI assistants, connecting tools, and turning informal knowledge into repeatable routines.
 
-To build the static site:
-
-```bash
-npm run build
-```
-
-To write a new post, add a Markdown file under `content/posts/`.
+This blog is a small place for notes from that work: business processes, education products, automation, AI workflows, and things I want to understand clearly enough to write down.

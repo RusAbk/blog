@@ -1,11 +1,4 @@
----
-title: Writing style
-description: The voice and editorial rules for this blog.
-published: 2026-05-16
-tags:
-  - meta
-  - writing
----
+# Writing Style
 
 The writing here should sound like a real person thinking clearly, not like a brochure, a thread optimized for engagement, or a polished corporate memo.
 
@@ -32,4 +25,3 @@ Avoid:
 - paragraphs that only summarize what the reader just read
 
 When editing, make the note clearer before making it prettier. If a phrase sounds impressive but does not help the reader see the idea, cut it.
-

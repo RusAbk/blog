@@ -6,6 +6,9 @@
 
 body {
   letter-spacing: 0;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--light) 92%, var(--lightgray)), var(--light) 18rem)
+    fixed;
 }
 
 .page > #quartz-body .center article {
@@ -14,6 +17,33 @@ body {
 
 .page-title a {
   font-weight: 700;
+  color: var(--dark);
+  letter-spacing: 0;
+}
+
+.page-title a::after {
+  content: "Notes";
+  display: block;
+  width: fit-content;
+  margin-top: 0.35rem;
+  padding: 0.14rem 0.48rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 999px;
+  color: var(--secondary);
+  font-size: 0.72rem;
+  font-family: var(--bodyFont);
+  font-weight: 600;
+}
+
+.search > .search-button,
+button.mobile-explorer,
+button.desktop-explorer {
+  border-radius: 8px;
+}
+
+.search > .search-button {
+  border: 1px solid var(--lightgray);
+  background: color-mix(in srgb, var(--light) 86%, white);
 }
 
 article h1,
@@ -23,13 +53,69 @@ article h3 {
 }
 
 article h1 {
-  font-size: 2rem;
+  font-size: 2.15rem;
+  line-height: 1.12;
 }
 
 article h2 {
   margin-top: 2rem;
 }
 
+a.internal {
+  border: 1px solid color-mix(in srgb, var(--secondary) 24%, transparent);
+  border-radius: 6px;
+  padding: 0 0.24rem;
+}
+
+article {
+  padding-top: 0.35rem;
+}
+
+article p {
+  font-size: 1.02rem;
+}
+
+article blockquote {
+  border-left-color: var(--secondary);
+  background: color-mix(in srgb, var(--highlight) 60%, transparent);
+  border-radius: 0 8px 8px 0;
+  padding: 0.75rem 1rem;
+}
+
+.explorer-content ul li > a,
+.folder-container div > a,
+.folder-container div > button span {
+  border-radius: 6px;
+}
+
+.explorer-content ul li > a {
+  padding: 0.08rem 0.22rem;
+}
+
+.explorer-content ul li > a.active {
+  background: var(--highlight);
+}
+
+.tags {
+  gap: 0.35rem;
+}
+
+.tags > li > a {
+  border: 1px solid color-mix(in srgb, var(--secondary) 22%, transparent);
+  border-radius: 999px;
+  padding: 0.12rem 0.48rem;
+  background: color-mix(in srgb, var(--highlight) 68%, transparent);
+}
+
 footer {
-  opacity: 0.72;
+  border-top: 1px solid var(--lightgray);
+  margin-top: 3rem;
+  padding-top: 1.4rem;
+  opacity: 0.82;
+}
+
+footer p {
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.92rem;
 }
