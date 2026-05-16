@@ -21,18 +21,192 @@ body {
   letter-spacing: 0;
 }
 
-.page-title a::after {
-  content: "Notes";
-  display: block;
-  width: fit-content;
-  margin-top: 0.35rem;
-  padding: 0.14rem 0.48rem;
-  border: 1px solid var(--lightgray);
-  border-radius: 999px;
-  color: var(--secondary);
-  font-size: 0.72rem;
-  font-family: var(--bodyFont);
-  font-weight: 600;
+.page-title .site-brand img {
+  border: 1px solid color-mix(in srgb, var(--lightgray) 70%, white);
+  box-shadow: 0 14px 32px color-mix(in srgb, var(--dark) 12%, transparent);
+}
+
+@media (max-width: 800px) {
+  .page > #quartz-body .sidebar.left {
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.65rem;
+    padding-top: 1.1rem;
+  }
+
+  .page > #quartz-body .sidebar.left > .page-title {
+    flex: 1 1 auto;
+    min-width: 0;
+    order: 1;
+  }
+
+  .page > #quartz-body .sidebar.left > .spacer {
+    display: none;
+  }
+
+  .page > #quartz-body .sidebar.left > .explorer {
+    order: 0;
+    flex: 0 0 auto;
+    margin: 0;
+  }
+
+  .page > #quartz-body .sidebar.left > .flex-component {
+    order: 2;
+    flex: 0 0 auto;
+    gap: 0.58rem !important;
+    margin: 0;
+  }
+
+  .page-title .site-brand {
+    display: block;
+    min-width: 0;
+  }
+
+  .page-title .site-name {
+    display: block;
+    max-width: 10.5rem;
+    overflow: hidden;
+    font-size: 1.08rem;
+    line-height: 1.12;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .page-title .site-brand img {
+    display: none;
+  }
+
+  .page-title .site-kicker {
+    display: none;
+  }
+
+  .search {
+    min-width: 2.15rem;
+    max-width: 2.15rem;
+  }
+
+  .search > .search-button {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .search > .search-button > p {
+    display: none;
+  }
+
+  .search > .search-button svg {
+    margin: 0;
+  }
+
+  .darkmode,
+  .readermode {
+    width: 1.35rem;
+  }
+
+  .page > #quartz-body.lock-scroll > :not(.sidebar.left:has(.explorer)) {
+    transform: none;
+  }
+
+  .explorer:not(.collapsed)::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: color-mix(in srgb, var(--dark) 22%, transparent);
+    backdrop-filter: blur(2px);
+    pointer-events: none;
+  }
+
+  .explorer .explorer-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-sizing: border-box;
+    width: min(22rem, calc(100vw - 3rem));
+    height: 100dvh;
+    max-height: 100dvh;
+    padding: 5.4rem 1rem 1.4rem;
+    overflow-y: auto;
+    border-right: 1px solid var(--lightgray);
+    border-radius: 0 18px 18px 0;
+    background: color-mix(in srgb, var(--light) 96%, white);
+    box-shadow: 22px 0 70px color-mix(in srgb, var(--dark) 20%, transparent);
+  }
+
+  .explorer .explorer-content::before {
+    content: "Writing";
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--dark);
+    font-family: var(--headerFont);
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .explorer .explorer-content .explorer-ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .explorer .explorer-content ul li > a,
+  .explorer .folder-container {
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+    box-sizing: border-box;
+    border: 1px solid var(--lightgray);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--light) 88%, white);
+    padding: 0.5rem 0.7rem;
+  }
+
+  .explorer .explorer-content ul li > a {
+    color: var(--dark);
+    font-weight: 650;
+    opacity: 1;
+  }
+
+  .explorer .explorer-content ul li > a.active {
+    border-color: color-mix(in srgb, var(--secondary) 45%, var(--lightgray));
+    background: var(--highlight);
+    color: var(--secondary);
+  }
+
+  .explorer .folder-outer > ul {
+    margin: 0.35rem 0 0.4rem 1rem;
+    padding-left: 0.75rem;
+  }
+
+  .explorer:not(.collapsed) .mobile-explorer {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 102;
+    width: 2.4rem;
+    height: 2.4rem;
+    justify-content: center;
+    border: 1px solid var(--lightgray);
+    border-radius: 10px;
+    background: var(--light);
+    box-shadow: 0 10px 30px color-mix(in srgb, var(--dark) 12%, transparent);
+  }
+
+  .explorer:not(.collapsed) .mobile-explorer .lucide-menu line:nth-child(1) {
+    transform: translate(3px, -1px) rotate(45deg);
+    transform-origin: 8px 12px;
+  }
+
+  .explorer:not(.collapsed) .mobile-explorer .lucide-menu line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .explorer:not(.collapsed) .mobile-explorer .lucide-menu line:nth-child(3) {
+    transform: translate(3px, 1px) rotate(-45deg);
+    transform-origin: 8px 12px;
+  }
 }
 
 .search > .search-button,
