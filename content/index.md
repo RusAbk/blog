@@ -1,5 +1,5 @@
 ---
-title: Notes
+title: My Personal Blog
 description: Short notes by Ruslan Abkadirov.
 ---
 
@@ -9,4 +9,7 @@ I work on business process optimization and AI workflows for teams that need les
 
 ## Start here
 
-- [[about|About]]
+- [[thoughts|Thoughts]] — longer notes and reflections on work, systems, AI, education, and operations.
+- [[sparks|Sparks]] — short observations, unfinished questions, and small ideas worth keeping.
+- [[guides|Guides]] — practical step-by-step notes for building, fixing, automating, or setting something up.
+- [[cases|Cases]] — concrete examples from process work, AI implementation, and operational problem-solving.
