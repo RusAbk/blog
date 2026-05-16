@@ -1,0 +1,35 @@
+@use "./base.scss";
+
+:root {
+  --articleWidth: 720px;
+}
+
+body {
+  letter-spacing: 0;
+}
+
+.page > #quartz-body .center article {
+  line-height: 1.72;
+}
+
+.page-title a {
+  font-weight: 700;
+}
+
+article h1,
+article h2,
+article h3 {
+  letter-spacing: 0;
+}
+
+article h1 {
+  font-size: 2rem;
+}
+
+article h2 {
+  margin-top: 2rem;
+}
+
+footer {
+  opacity: 0.72;
+}
