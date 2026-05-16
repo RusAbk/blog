@@ -194,18 +194,27 @@ body {
     box-shadow: 0 10px 30px color-mix(in srgb, var(--dark) 12%, transparent);
   }
 
-  .explorer:not(.collapsed) .mobile-explorer .lucide-menu line:nth-child(1) {
-    transform: translate(3px, -1px) rotate(45deg);
-    transform-origin: 8px 12px;
+  .explorer:not(.collapsed) .mobile-explorer .lucide-menu {
+    display: none;
   }
 
-  .explorer:not(.collapsed) .mobile-explorer .lucide-menu line:nth-child(2) {
-    opacity: 0;
+  .explorer:not(.collapsed) .mobile-explorer::before,
+  .explorer:not(.collapsed) .mobile-explorer::after {
+    content: "";
+    position: absolute;
+    width: 1.05rem;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--darkgray);
+    transform-origin: center;
   }
 
-  .explorer:not(.collapsed) .mobile-explorer .lucide-menu line:nth-child(3) {
-    transform: translate(3px, 1px) rotate(-45deg);
-    transform-origin: 8px 12px;
+  .explorer:not(.collapsed) .mobile-explorer::before {
+    transform: rotate(45deg);
+  }
+
+  .explorer:not(.collapsed) .mobile-explorer::after {
+    transform: rotate(-45deg);
   }
 }
 

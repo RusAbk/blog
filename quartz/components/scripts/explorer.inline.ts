@@ -37,6 +37,30 @@ function toggleExplorer(this: HTMLElement) {
   }
 }
 
+function closeMobileExplorer(explorer: HTMLElement) {
+  explorer.classList.add("collapsed")
+  explorer.setAttribute("aria-expanded", "false")
+  document.documentElement.classList.remove("mobile-no-scroll")
+}
+
+function closeExplorerOnOutsideClick(evt: MouseEvent) {
+  const target = evt.target as MaybeHTMLElement
+  if (!target) return
+
+  const openExplorer = document.querySelector(".explorer:not(.collapsed)") as HTMLElement | null
+  if (!openExplorer) return
+
+  const mobileExplorer = openExplorer.querySelector(".mobile-explorer") as HTMLElement | null
+  if (!mobileExplorer?.checkVisibility()) return
+
+  const explorerContent = openExplorer.querySelector(".explorer-content")
+  const clickedInsideMenu = explorerContent?.contains(target)
+  const clickedToggle = mobileExplorer.contains(target)
+  if (!clickedInsideMenu && !clickedToggle) {
+    closeMobileExplorer(openExplorer)
+  }
+}
+
 function toggleFolder(evt: MouseEvent) {
   evt.stopPropagation()
   const target = evt.target as MaybeHTMLElement
@@ -272,6 +296,9 @@ document.addEventListener("prenav", async () => {
 document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   const currentSlug = e.detail.url
   await setupExplorer(currentSlug)
+
+  document.addEventListener("click", closeExplorerOnOutsideClick)
+  window.addCleanup(() => document.removeEventListener("click", closeExplorerOnOutsideClick))
 
   // if mobile hamburger is visible, collapse by default
   for (const explorer of document.getElementsByClassName("explorer")) {
