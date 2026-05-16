@@ -1,7 +1,7 @@
 ---
 title: Stop Asking AI to Help You Plan. Ask It to Kill the Plan.
 description: Everyone is asking AI to help them build the plan. Almost nobody is asking it to break the plan first.
-published: 2025-05-01
+published: 2026-03-02
 tags:
   - AI
   - startups

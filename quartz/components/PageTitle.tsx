@@ -7,13 +7,23 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
   const title = cfg?.pageTitle ?? i18n(cfg.locale).propertyDefaults.title
   const baseDir = pathToRoot(fileData.slug!)
   return (
-    <h2 class={classNames(displayClass, "page-title")}>
-      <a href={baseDir} class="site-brand">
-        <span class="site-name">{title}</span>
-        <span class="site-kicker">Notes</span>
-        <img src={`${baseDir}/static/profile-image.jpg`} alt="Ruslan Abkadirov" width="96" height="96" />
+    <>
+      <h2 class={classNames(displayClass, "page-title")}>
+        <a href={baseDir} class="site-brand">
+          <span class="site-name">{title}</span>
+          <span class="site-kicker">Notes</span>
+          <img
+            src={`${baseDir}/static/profile-image.jpg`}
+            alt="Ruslan Abkadirov"
+            width="96"
+            height="96"
+          />
+        </a>
+      </h2>
+      <a class={classNames(displayClass, "root-site-link")} href="https://ruslanabkadirov.me/">
+        Main site
       </a>
-    </h2>
+    </>
   )
 }
 
@@ -52,6 +62,24 @@ PageTitle.css = `
   height: 5.75rem;
   object-fit: cover;
   border-radius: 18px;
+}
+
+.root-site-link {
+  display: inline-flex;
+  width: fit-content;
+  color: var(--gray);
+  font-family: var(--codeFont);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.root-site-link::before {
+  content: "../";
+  color: var(--secondary);
+}
+
+.root-site-link:hover {
+  color: var(--secondary);
 }
 `
 

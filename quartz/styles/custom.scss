@@ -110,6 +110,10 @@ body {
     order: 1;
   }
 
+  .page > #quartz-body .sidebar.left > .root-site-link {
+    display: none;
+  }
+
   .page > #quartz-body .sidebar.left > .spacer {
     display: none;
   }
@@ -378,6 +382,9 @@ pre {
   background: transparent;
   padding: 0.1rem 0 0.1rem 0.5rem;
   box-shadow: none;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .explorer-content ul li > a.active {
@@ -394,6 +401,9 @@ pre {
 .folder-container div > button span {
   border-radius: 0;
   background: transparent;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .folder-container div > a,
@@ -406,6 +416,11 @@ pre {
 .folder-container div > button span::before {
   content: "/";
   color: var(--gray);
+}
+
+.explorer .folder-icon {
+  width: 0.72rem;
+  margin-right: 0.28rem;
 }
 
 ul.section-ul {

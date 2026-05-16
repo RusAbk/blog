@@ -1,6 +1,19 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
+const topLevelExplorer = Component.Explorer({
+  title: "Writing",
+  folderDefaultState: "open",
+  useSavedState: false,
+  mapFn: (node) => {
+    const depth = node.slug.split("/").length
+    if (node.isFolder && depth >= 2) {
+      node.children = []
+    }
+    return node
+  },
+})
+
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
@@ -35,7 +48,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer({ title: "Writing", folderDefaultState: "open" }),
+    topLevelExplorer,
   ],
   right: [
     Component.Graph(),
@@ -59,7 +72,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    topLevelExplorer,
   ],
   right: [],
 }
