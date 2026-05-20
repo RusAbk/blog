@@ -1,6 +1,6 @@
 ---
 title: "I Wasted a Week Fixing Prompts That Weren't Broken"
-description: "What temperature, top-p, frequency penalty, and presence penalty actually do — with metaphors, examples, and when to use which settings."
+description: "What temperature, top-p, frequency penalty, and presence penalty actually do - with metaphors, examples, and when to use which settings."
 published: 2026-05-20
 tags:
   - AI
@@ -12,7 +12,7 @@ tags:
 
 I spent a week tweaking temperature, top-p, and penalties, trying to fix prompts that were already fine.
 
-The prompts weren't broken. My understanding of what the model was actually doing — that was broken.
+The prompts weren't broken. My understanding of what the model was actually doing - that was broken.
 
 Temperature. Top-p. Frequency penalty. Presence penalty. Max tokens. The names sound like settings on an industrial printer. Most people ignore them. The people who do touch them usually just crank temperature to "make it more creative" and call it a day.
 
@@ -20,9 +20,9 @@ That is like owning a kitchen and only knowing the microwave.
 
 ## Who This Is For
 
-If you are a regular user who asks ChatGPT questions, writes emails, or brainstorms ideas — you can close this tab. You do not need this. The defaults work fine for what you are doing. The providers have tuned them for general use, and they are good.
+If you are a regular user who asks ChatGPT questions, writes emails, or brainstorms ideas - you can close this tab. You do not need this. The defaults work fine for what you are doing. The providers have tuned them for general use, and they are good.
 
-This guide is for people who hit a wall. You are building something specific — an automation pipeline, a content generator, a classification system — and the output is wrong in a consistent way. Too repetitive. Too random. Too scattered. Too boring. And you do not know which knob to turn.
+This guide is for people who hit a wall. You are building something specific - an automation pipeline, a content generator, a classification system - and the output is wrong in a consistent way. Too repetitive. Too random. Too scattered. Too boring. And you do not know which knob to turn.
 
 It is also for people who work with models through an API and want to understand what they are actually controlling when they set these values.
 
@@ -32,7 +32,7 @@ If that is not you, the defaults will serve you well. Come back when they do not
 
 ## The One-Minute Version
 
-Every time an LLM generates a word, it does not pick the "right" word. It picks from a probability distribution — a ranked list of candidates, each with a likelihood score.
+Every time an LLM generates a word, it does not pick the "right" word. It picks from a probability distribution - a ranked list of candidates, each with a likelihood score.
 
 **Temperature** controls how flat or spiky that distribution is. Low temperature: the model plays it safe and picks from the top candidates. High temperature: it gives weaker candidates a real chance.
 
@@ -62,48 +62,48 @@ At **temperature 2.0**, the poet is on fire. The building might be on fire too.
 
 ### What Actually Happens
 
-The model assigns a probability to every possible next word. At temperature 0, it always picks the highest-probability word. At temperature 1, it samples according to the original probabilities. Above 1, it flattens the distribution — unlikely words become more likely.
+The model assigns a probability to every possible next word. At temperature 0, it always picks the highest-probability word. At temperature 1, it samples according to the original probabilities. Above 1, it flattens the distribution - unlikely words become more likely.
 
 ```txt
-# Temperature 0 — same prompt, same answer, every time
+# Temperature 0 - same prompt, same answer, every time
 "The capital of France is Paris."
 
-# Temperature 0.7 — slight variation, same facts
+# Temperature 0.7 - slight variation, same facts
 "Paris is the capital of France."
 
-# Temperature 1.5 — more varied phrasing, occasional odd choices
+# Temperature 1.5 - more varied phrasing, occasional odd choices
 "France's capital? That would be Paris, of course."
 "Well, if we're talking about France, the capital city is Paris."
 
-# Temperature 2.0 — creative, sometimes unhinged
+# Temperature 2.0 - creative, sometimes unhinged
 "Ah, the City of Light! Paris, that romantic capital where croissants dream of butter."
 ```
 
 ### When to Use What
 
 ```txt
-Temperature 0 — 0.3
+Temperature 0 - 0.3
 ├── Code generation
 ├── Data extraction
 ├── Classification tasks
 ├── Anything where consistency matters more than style
 └── "I need the same answer if I ask this 100 times"
 
-Temperature 0.5 — 0.8
+Temperature 0.5 - 0.8
 ├── General writing
 ├── Summarization
 ├── Most business use cases
 ├── The "it just works" range
 └── Default for a reason
 
-Temperature 0.9 — 1.2
+Temperature 0.9 - 1.2
 ├── Brainstorming
 ├── Creative writing
 ├── Generating varied examples
 ├── When you want the model to surprise you
 └── Accept that some outputs will be bad
 
-Temperature 1.3 — 2.0
+Temperature 1.3 - 2.0
 ├── Experimental creative work
 ├── Generating ideas you will filter manually
 ├── When you want to see what the model "knows" at the edges
@@ -161,17 +161,17 @@ People confuse these because they both control "randomness." They do not.
 Most of the time, adjust temperature and leave top-p at 0.9–1.0. Top-p is useful when you want to constrain vocabulary without making the output robotic.
 
 ```txt
-Top-p 0.1 — 0.3
+Top-p 0.1 - 0.3
 ├── Very constrained output
 ├── When you need specific terminology
 └── Rarely useful in practice
 
-Top-p 0.5 — 0.7
+Top-p 0.5 - 0.7
 ├── Focused but not rigid
 ├── Good for technical writing
 └── A reasonable middle ground
 
-Top-p 0.9 — 1.0
+Top-p 0.9 - 1.0
 ├── Default range
 ├── Lets the model use its full vocabulary
 └── Leave it here unless you have a reason
@@ -208,12 +208,12 @@ Frequency penalty 0.0 (default)
 ├── Words can repeat freely
 └── Fine for short outputs
 
-Frequency penalty 0.5 — 1.0
+Frequency penalty 0.5 - 1.0
 ├── Moderate suppression
 ├── Good for longer-form writing
 └── Reduces obvious repetition
 
-Frequency penalty 1.5 — 2.0
+Frequency penalty 1.5 - 2.0
 ├── Aggressive suppression
 ├── Words get "used up" fast
 └── Can make output feel forced
@@ -239,7 +239,7 @@ frequency_penalty: 0.0
 
 ### The Difference from Frequency Penalty
 
-Frequency penalty suppresses specific words. Presence penalty suppresses topics — it discourages the model from revisiting things it has already said, even if it uses different words.
+Frequency penalty suppresses specific words. Presence penalty suppresses topics - it discourages the model from revisiting things it has already said, even if it uses different words.
 
 ```txt
 # Frequency penalty: "Stop saying 'AI' so much"
@@ -256,12 +256,12 @@ Presence penalty 0.0 (default)
 ├── Model can stay on the same topic
 └── Fine for focused, deep responses
 
-Presence penalty 0.5 — 1.0
+Presence penalty 0.5 - 1.0
 ├── Encourages topic diversity
 ├── Good for brainstorming
 └── Model will naturally broaden the discussion
 
-Presence penalty 1.5 — 2.0
+Presence penalty 1.5 - 2.0
 ├── Aggressive topic shifting
 ├── Model will avoid anything it already mentioned
 └── Can make output feel scattered
@@ -272,14 +272,14 @@ Presence penalty 1.5 — 2.0
 ```txt
 # Brainstorming: you want variety
 presence_penalty: 0.8
-# "Give me 10 marketing ideas" — each idea should be different
+# "Give me 10 marketing ideas" - each idea should be different
 
 # Deep explanation: you want focus
 presence_penalty: 0.0
-# "Explain how SSL works" — stay on topic, go deep
+# "Explain how SSL works" - stay on topic, go deep
 
 # Conversation: you want natural flow
-presence_penalty: 0.3 — 0.5
+presence_penalty: 0.3 - 0.5
 # Slight nudge to not repeat what was already said
 ```
 
@@ -300,7 +300,7 @@ max_tokens: 500
 ├── Good for concise answers
 └── Most "chat" use cases
 
-max_tokens: 2000 — 4000
+max_tokens: 2000 - 4000
 ├── Long-form content
 ├── Articles, detailed explanations
 └── Watch your API costs
@@ -332,7 +332,7 @@ presence_penalty:  0.0
 max_tokens:      2000
 ```
 
-Why: Code needs to be correct, not creative. Low temperature for consistency. Low top-p to stay in "code vocabulary" territory. No penalties — in code, repetition is fine (you want the same variable name).
+Why: Code needs to be correct, not creative. Low temperature for consistency. Low top-p to stay in "code vocabulary" territory. No penalties - in code, repetition is fine (you want the same variable name).
 
 ### Recipe 2: Creative Writing
 
@@ -430,7 +430,7 @@ Some APIs let you set different temperatures for the system message vs the user 
 
 Most of the time, the defaults are fine. Temperature 0.7, top-p 0.9, no penalties. The model providers have tuned these for general use, and they work.
 
-The reason to learn these parameters is not because you need to tweak them every time. It is because when something goes wrong — the output is too repetitive, too random, too scattered, too boring — you will know which knob to turn and in which direction.
+The reason to learn these parameters is not because you need to tweak them every time. It is because when something goes wrong - the output is too repetitive, too random, too scattered, too boring - you will know which knob to turn and in which direction.
 
 The value is not optimization. It is diagnosis.
 
