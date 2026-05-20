@@ -1,6 +1,6 @@
 ---
-title: LLM Parameters Explained: Temperature, Top-p, and the Rest
-description: What temperature, top-p, frequency penalty, and presence penalty actually do — with metaphors, examples, and when to use which settings.
+title: "LLM Parameters Explained: Temperature, Top-p, and the Rest"
+description: "What temperature, top-p, frequency penalty, and presence penalty actually do — with metaphors, examples, and when to use which settings."
 published: 2026-05-20
 tags:
   - AI
