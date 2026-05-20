@@ -1,5 +1,5 @@
 ---
-title: "LLM Parameters Explained: Temperature, Top-p, and the Rest"
+title: "I Wasted a Week Fixing Prompts That Weren't Broken"
 description: "What temperature, top-p, frequency penalty, and presence penalty actually do — with metaphors, examples, and when to use which settings."
 published: 2026-05-20
 tags:
@@ -10,7 +10,9 @@ tags:
   - prompt-engineering
 ---
 
-You type a prompt, hit send, and the model answers. But somewhere between the prompt and the response, there is a layer of knobs that most people leave on default and never touch.
+I spent a week tweaking temperature, top-p, and penalties, trying to fix prompts that were already fine.
+
+The prompts weren't broken. My understanding of what the model was actually doing — that was broken.
 
 Temperature. Top-p. Frequency penalty. Presence penalty. Max tokens. The names sound like settings on an industrial printer. Most people ignore them. The people who do touch them usually just crank temperature to "make it more creative" and call it a day.
 
