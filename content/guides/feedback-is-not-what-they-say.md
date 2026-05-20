@@ -1,7 +1,7 @@
 ---
 title: "Feedback Is Not What They Say. It's What You Do With It."
 description: "Why most feedback is useless, how to ask questions that get honest answers, and what to do when you actually get them."
-published: 2026-05-20
+published: 2026-04-22
 tags:
   - product
   - feedback
@@ -20,7 +20,7 @@ Then nothing changed. The same people who said "cool" didn't come back. Didn't b
 
 The feedback was positive. The result was nothing.
 
-Here is why that happens — and how to get feedback that actually helps.
+Here is why that happens - and how to get feedback that actually helps.
 
 ---
 
@@ -30,7 +30,7 @@ Most feedback is polite noise.
 
 When you ask "What do you think?" you are not asking for an opinion. You are asking for a social response. And people are very good at giving social responses.
 
-"What do you think of my product?" — "It's great!"
+"What do you think of my product?" - "It's great!"
 
 They are not lying. They are being polite. There is a difference, and it matters.
 
@@ -55,7 +55,7 @@ This is not feedback collection. This is reassurance shopping.
 
 Real feedback is uncomfortable. It tells you that the thing you spent weeks building is not working the way you thought. That the feature nobody asked for is the one everyone wants. That your "intuitive" interface is confusing.
 
-If you are not ready to hear that, do not ask. You are just wasting everyone's time — including your own.
+If you are not ready to hear that, do not ask. You are just wasting everyone's time - including your own.
 
 ---
 
@@ -78,9 +78,9 @@ The quality of feedback depends on the quality of the question. Vague questions 
 
 The trick is to ask about behavior, not opinion. Opinions are cheap. Behavior is expensive.
 
-"Do you like this?" — everyone says yes.
-"Would you pay for this?" — more honest, but still hypothetical.
-"Have you paid for something like this before?" — now we are getting somewhere.
+"Do you like this?" - everyone says yes.
+"Would you pay for this?" - more honest, but still hypothetical.
+"Have you paid for something like this before?" - now we are getting somewhere.
 
 ```txt
 # Even better: ask about the past, not the future
@@ -114,7 +114,7 @@ The useful response is: "What specifically was confusing?" and then shutting up 
 
 ```txt
 # Bad response
-"No, it's actually simple — you just click here, then here, and then..."
+"No, it's actually simple - you just click here, then here, and then..."
 
 # Good response
 "What part was unclear?"
@@ -149,7 +149,7 @@ Not all feedback is equal. Feedback from your target user is worth 10x feedback 
 For each piece of feedback, make a conscious decision. Either you act on it, or you consciously choose not to. "I'll think about it later" is not a decision. It is avoidance.
 
 **5. Close the loop.**
-If someone gave you feedback and you acted on it, tell them. "You said X was confusing, I changed it — what do you think now?" This is how you build a relationship with your users. And it is how you get better feedback next time.
+If someone gave you feedback and you acted on it, tell them. "You said X was confusing, I changed it - what do you think now?" This is how you build a relationship with your users. And it is how you get better feedback next time.
 
 ---
 
@@ -181,7 +181,7 @@ What it will do is show you the gap between what you think you built and what pe
 
 That gap is where the work is.
 
-Most people do not want to see it. They want confirmation that they are on the right track. And they will find it — in the polite nods, the "looks good," the silence that feels like agreement.
+Most people do not want to see it. They want confirmation that they are on the right track. And they will find it - in the polite nods, the "looks good," the silence that feels like agreement.
 
 The people who build good things are not the ones who get the best feedback. They are the ones who ask the hardest questions and actually listen to the answers.
 
